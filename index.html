@@ -1,303 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="main.js"></script>
-    <title>Käyttöönottopöytäkirja</title>
+    <title>KJH Rakennus Oy</title>
 </head>
-
 <body>
-    <header class="header">
-        <h1>Käyttöönottopöytäkirja</h1>
+    <header>
+        <div class="logos">
+            <span>KJH Rakennus Oy</span>
+            <span>KN Lämpöryhmä</span>
+        </div>
+        <div class="sections">
+            <span class="selected">Meistä</span>
+            <span>Tuotteet</span>
+            <span>Ota yhteyttä</span>
+        </div>
     </header>
-
-    <form>
-        <fieldset class="asentajat">
-            <legend>Asennusliike - KJH Rakennus Oy</legend>
-            
-            <div class="asentaja">
-                <div>
-                    <label>Asennuksen suorittaneen kylmä-asentajan nimi</label>
-                    <input type="text" autocomplete="name" value="Kari Hirvonen">
-                </div>
-                <div>
-                    <label>Postiosoite</label>
-                    <input type="text" autocomplete="street-address" value="Villentie 13">
-                </div>
-                <div>
-                    <label>Postinumero</label>
-                    <input type="text" autocomplete="postal-code" value="45910">
-                </div>
-                <div>
-                    <label>Postitoimipaikka</label>
-                    <input type="text" autocomplete="address-level2" value="Voikkaa">
-                </div>
-                <div>
-                    <label>Puhelin</label>
-                    <input type="tel" autocomplete="tel" value="+358400754369">
-                </div>
-                <div>
-                    <label>Sähköpostiosoite</label>
-                    <input type="email" autocomplete="email" value="kari@kjhrakennus.fi">
-                </div>
-                <input id="asentaja-btn" type="button" value="lisää toinen asentaja" onclick="toggleAsentaja()">
-            </div>
-            
-            <div id="secondary" class="asentaja" style="display:none">
-                <div>
-                    <label>Asennuksen suorittaneen kylmä-asentajan nimi</label>
-                    <input type="text" autocomplete="name">
-                </div>
-                <div>
-                    <label>Postiosoite</label>
-                    <input type="text" autocomplete="street-address">
-                </div>
-                <div>
-                    <label>Postinumero</label>
-                    <input type="text" autocomplete="postal-code">
-                </div>
-                <div>
-                    <label>Postitoimipaikka</label>
-                    <input type="text" autocomplete="address-level2">
-                </div>
-                <div>
-                    <label>Puhelin</label>
-                    <input type="tel" autocomplete="tel">
-                </div>
-                <div>
-                    <label>Sähköpostiosoite</label>
-                    <input type="email" autocomplete="email">
+    <section class="about">
+        <p class="about-txt main">
+            Ilmalämpöpumput, vesi-ilmalämpöpumput, aurinkosähköjärjestelmät,
+            sekä muut asennukset 30 vuoden kokemuksella
+        </p>
+        <p class="about-txt additional">
+            Meiltä pumput myös op:n rahoituksella!
+        </p>
+    </section>
+    <section class="products-section">
+        <div class="categories">
+            <span class="selected">Ilmalämpöpumput</span>
+            <span>Vesi-ilmalämpöpumput</span>
+        </div>
+        <div class="products">
+            <div class="product">
+                <p class="name">Innova AES500</p>
+                <img src="../assets/1.jpg" alt="" srcset="">
+                <div class="info">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus atque deleniti quibusdam? Recusandae quod molestiae illum atque neque vel quia laudantium, voluptatem aperiam consectetur possimus sequi et tenetur est error.</p>
                 </div>
             </div>
-        </fieldset>
-        <fieldset>
-            <legend>Asennuskohde</legend>
-            <div>
-                <label>Laitteen haltijan nimi</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Yhteystiedot / Puhelin</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Postiosoite</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Asennuskohde</label>
-                <input type="text" list="asennuskohteet">
-                <datalist id="asennuskohteet">
-                    <option value="Omakotitalo"></option>
-                    <option value="Rivitalo"></option>
-                    <option value="Kesäasunto"></option>
-                    <option value="Kerrostalo"></option>
-                </datalist>
-            </div>
-            <div>
-                <label>Postinumero</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Postitoimipaikka</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Sähköpostiosoite</label>
-                <input type="email">
-            </div>
-        </fieldset>
-        <fieldset class="laitteen-tiedot">
-            <legend>Laitteen tiedot</legend>
-            <div>
-                <label>Valmistaja</label>
-                <input type="text" list="Valmistaja">
-                <datalist id="Valmistaja">
-                    <option value="Daikin"></option>
-                    <option value="Innova"></option>
-                    <option value="Midea"></option>
-                    <option value="Hitachi"></option>
-                    <option value="Mitsubishi"></option>
-                    <option value="Gree"></option>
-                    <option value="Panasonic"></option>
-                    <option value="Samsung"></option>
-                    <option value="Bosch"></option>
-                    <option value="Whirlpool"></option>
-                    <option value="Muu"></option>
-                </datalist>            </div>
-            <div class="laite-rivi sisäyksiköt">
-                <div class="laite">
-                    <div>
-                        <label>Sisäyksikön tyyppi</label>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <label>Sisäyksikön sarjanumero</label>
-                        <input type="text">
-                    </div>
+            <div class="product">
+                <p class="name">Panasonic ILP-9</p>
+                <img src="../assets/2.jpg" alt="" srcset="">
+                <div class="info">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus atque deleniti quibusdam? Recusandae quod molestiae illum atque neque vel quia laudantium, voluptatem aperiam consectetur possimus sequi et tenetur est error.</p>
                 </div>
             </div>
-            <div class="btn-row">
-                <input type="button" class="lisää-rivi-btn" id="lisää-sisäyksikkö" onclick="addRow('sisäyksiköt')"
-                    value="+"></input>
-                <input type="button" class="lisää-rivi-btn" id="poista-sisäyksikkö" onclick="deleteRow('sisäyksiköt')"
-                    value="-"></input>
-            </div>
-            <div class="laite-rivi ulkoyksiköt">
-                <div class="laite">
-                    <div>
-                        <label>Ulkoyksikön tyyppi</label>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <label>Ulkoyksikön sarjanumero</label>
-                        <input type="text">
-                    </div>
+            <div class="product">
+                <p class="name">Bosch AS88-50</p>
+                <img src="../assets/3.jpg" alt="" srcset="">
+                <div class="info">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus atque deleniti quibusdam? Recusandae quod molestiae illum atque neque vel quia laudantium, voluptatem aperiam consectetur possimus sequi et tenetur est error.</p>
                 </div>
             </div>
-            <div class="btn-row">
-                <input type="button" class="lisää-rivi-btn" id="lisää-ulkoyksikkö" onclick="addRow('ulkoyksiköt')"
-                    value="+"></input>
-                <input type="button" class="lisää-rivi-btn" id="poista-ulkoyksikkö" onclick="deleteRow('ulkoyksiköt')"
-                    value="-"></input>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Asennuskohtaiset tiedot</legend>
-            <div>
-                <label>Ulkoyksikön ja sisäyksikön välinen putkimatka (m)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Ulkoyksikön ja sisäyksikön välinen korkeusero (m)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Kylmäaineen lisätäyttö (g)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Sähkönsyöttö</label>
-                <input type="text" list="Sähkönsyöttö">
-                <datalist id="Sähkönsyöttö">
-                    <option value="Pistorasia"></option>
-                    <option value="Turvakytkin"></option>
-                    <option value="Muu"></option>
-                </datalist>
-            </div>
-            <div>
-                <label>Sulakekoko</label>
-                <input type="text" list="Sulakekoko">
-                <datalist id="Sulakekoko">
-                    <option value="10A"></option>
-                    <option value="13A"></option>
-                    <option value="16A"></option>
-                </datalist>
-            </div>
-            <div>
-                <label>Suojajohtimen jatkuvuus</label>
-                <input type="text">
-            </div>
-        </fieldset>
-        <fieldset class="checkboxes">
-            <legend>Sisäyksikön kondenssiveden poistaminen</legend>
-            <div class="checkbox-field">
-                <input type="checkbox" name="" id="">
-                <label>Viemäröity</label>
-            </div>
-            <div class="checkbox-field">
-                <input type="checkbox" name="" id="">
-                <label>Johdettu ulos</label>
-            </div>
-            <div class="checkbox-field">
-                <input type="checkbox" name="" id="">
-                <label>Asennettu kondenssivesipumppu </label>
-            </div>
-            <div class="checkbox-field">
-                <input type="checkbox" name="" id="">
-                <label>Toiminta tarkistettu</label>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Käyttöönotto mittaukset</legend>
-            <div>
-                <label>Mitattu tyhjiöpaine (mbar)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Paine lepotilassa (bar)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Ulkoilman lämpötila (&deg;C)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Sisäilman lämpötila (&deg;C)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Jäähdytyksen imupaine (bar)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Puhalluksen lämpötilä jäähdytyksessä (&deg;C)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Laitteen käyntivirta jäähdytyksessä</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Lämmityksen korkeapaine (bar)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Puhalluksen lämpötilä lämmityksessä (&deg;C)</label>
-                <input type="text">
-            </div>
-            <div>
-                <label>Laitteen käyntivirta lämmityksessä</label>
-                <input type="text">
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Laitteen käytönopastus</legend>
-            <div class="checkbox-row">
-                <div>
-                    <input type="checkbox" name="" id="">
-                    <label>Opastus suoritettu</label>
-                </div>
-            </div>
-        </fieldset>
-        <fieldset class="hyväksyntä">
-            <legend>Asennuksen hyväksyntä</legend>
-            <div class="lisätiedot-row">
-                <div>
-                    <label>Mahd. lisätiedot</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Paikka ja päiväys</label>
-                    <input type="text">
-                </div>
-            </div>
-            <div class="signatures">
-                <div>
-                    <label>Asiakkaan allekirjoitus</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Asentajan allekirjoitus</label>
-                    <input type="text">
-                </div>
-            </div>
-        </fieldset>
-    </form>
+        </div>
+    </section>
+    <section class="request">
+        <div class="form-container">
+            <span>Jätä yhteydenottopyyntö</span>
+            <form action="submit-request">
+                <label for="name">Nimi</label>
+                <!-- <br> -->
+                <input type="text" name="name" id="name">
+                <!-- <br> -->
+                <label for="email">Sähköposti</label>
+                <!-- <br> -->
+                <input type="email" name="email" id="email">
+                <!-- <br> -->
+                <label for="number">Puhelinnumero</label>
+                <!-- <br> -->
+                <input type="number" name="number" id="number">
+                <!-- <br> -->
+                <label for="message">Viesti</label>
+                <!-- <br> -->
+                <textarea name="message" id="message" rows="8"></textarea>
+            </form>
+        </div>
+    </section>
+    <section class="contact-info">
+        <p>KJH Rakennus Oy</p>
+        <p>Kari Hirvonen</p>
+        <p>+358401234567</p>
+        <p>kari@kjhrakennus.fi</p>
+    </section>
 </body>
-
 </html>
