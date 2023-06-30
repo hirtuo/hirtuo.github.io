@@ -1,248 +1,245 @@
-@media screen {
+:root {
+    --primary-color: black;
+    --secondary-color: rgb(173, 216, 230);
+    --background-color: rgba(173, 216, 230, 0.25);
+    --background-color-light: rgba(162, 162, 162, 0.25);
+    --default-padding: .8rem;
+    --font-size: 1.1rem;
+    --about-text-width: 50%;
+    --about-text-margin: 2rem;
+}
 
-    body {
-        margin: auto;
-        padding: 0.5rem;
-        width: 95vw;
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;
+    margin: 0;
+    font-size: var(--font-size);
+    color: var(--primary-color);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    white-space: nowrap;
+    flex-grow: 1;
+}
+
+.logos, .sections {
+    display: flex;
+    flex-direction: row;
+    padding: var(--default-padding);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logos {
+    column-gap: 0.5rem;
+}
+
+.sections {
+    justify-self: flex-end;
+}
+
+header .sections > span:not(.selected):hover {
+    cursor: pointer;
+    background-color: var(--background-color);
+}
+
+.sections span {
+    padding: var(--default-padding);
+}
+
+section.about {
+    z-index: 1;
+    height: 65%;
+    position: relative;
+    display: grid;
+    grid-auto-columns: auto;
+}
+
+section.about > .about-txt {
+    display: flex;
+    margin-top: 0;
+    width: var(--about-text-width);
+    margin: var(--about-text-margin);
+    word-break: keep-all;
+    font-weight: 400;
+}
+
+.about-txt.main {
+    margin-bottom: 0;
+    align-self: center;
+    font-size: 2rem;
+}
+
+.about-txt.additional {
+    font-size: 1.4rem;
+}
+
+section.about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .4;
+    z-index: -1;
+    background: url(../assets/demo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 2rem;
+    margin: 1rem 0;
+    column-gap: 2rem;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    row-gap: 0.2rem;
+}
+
+.categories span {
+    padding: var(--default-padding);
+}
+
+.categories span:not(.selected):hover {
+    cursor: pointer;
+    background-color: var(--background-color);
+}
+
+.selected {
+    background-color: var(--background-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.products {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    padding: 2rem;
+    overflow-x: auto;
+    background-color: var(--background-color-light)
+}
+
+.product {
+    min-width: 425px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.product > img {
+    width: 90%;
+    object-fit: scale-down;
+}
+
+.product .name {
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.request {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.2rem;
+}
+
+.request span {
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.request form {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    row-gap: 0.1rem;
+}
+
+.request form input {
+    box-sizing: border-box;
+    padding: 0.25rem;
+}
+
+.contact-info {
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2rem;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background-color: var(--background-color-light);
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 100%;
+    margin: 0 25%;
+    padding-top: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --default-padding: .6rem;
+        --about-text-width: auto;
+        --about-text-margin: auto;
     }
-    
-    fieldset {
+    header {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        margin-top: 0.6rem;
-        page-break-inside: avoid;
-    }
-    
-    fieldset > div {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        margin-top: 0.4rem;
-    }
-    
-    input {
-        border-top-style: hidden;
-        border-left-style: hidden;
-        border-right-style: hidden;
-        border-bottom: 1px solid black;
-    }
-    
-    input:focus {
-        outline: none;
-    }
-    
-    .header {
-        display: flex;
         align-items: center;
         justify-content: center;
     }
-    
-    .checkbox-field {
-        display: flex !important;
-        flex-direction: row;
-        min-width: max-content;
-        justify-content:flex-start;
-        align-items: center;
+    .sections {
+        position: sticky;
+        justify-self: center;
+        z-index: 9999;
     }
-    
-    .hyväksyntä {
-        grid-template-columns: 1fr;
+    .about-txt.additional {
+        margin-bottom: 0;
+        width: auto;
+        height: auto;
     }
-    
-    .lisätiedot-row {
-        display: grid;
-        grid-template-columns: 1fr;
+    .about-txt.main {
+        font-size: 1.6rem;
+        width: auto;
+        height: auto;
     }
-    
-    .lisätiedot-row > div, .signatures > div, .laite-rivi > .laite > div, .asentaja > div {
+    body {
+        text-align: center;
+        vertical-align: middle;
+    }
+    .form-container {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        margin-top: 0.4rem;
-    }
-    
-    #asentaja-btn {
-        border: solid 1px black;
-        width: min-content;
-        margin-top: 0.7rem;
-    }
-    
-    .btn-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-    
-    .laitteen-tiedot {
-        grid-template-columns: 1fr;
-    }
-    
-    .laite-rivi > .laite {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .lisää-rivi-btn {
-        margin-top: 0.4rem;
-        width: min-content;
-        white-space: nowrap;
-        border: 1px solid black;
-    }
-    
-    .lisää-rivi-btn:hover {
-        cursor: pointer;
-        background-color:whitesmoke;
-    }
-    
-    .checkboxes {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(max-content, 1fr));
-    }
-    
-    .signatures {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    * {
-        row-gap: 0.2rem;
-        column-gap: 0.7rem;
-    
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    
-    label {
-        font-size: smaller;
-    }
-}
-@media print {
-    body {
-        margin: auto !important;
-        padding: 0.5rem !important;
-        width: 95vw !important;
-    }
-
-    form {
-        display: grid !important;
-    }
-    
-    fieldset {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        margin-top: 0.6rem !important;
-        page-break-inside: avoid !important;
-    }
-    
-    .asentajat {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
-    }
-    
-    fieldset>div {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-end !important;
-        margin-top: 0.4rem !important;
-    }
-    
-    input {
-        border-top-style: hidden !important;
-        border-left-style: hidden !important;
-        border-right-style: hidden !important;
-        border-bottom: 1px solid black !important;
-    }
-    
-    input:focus {
-        outline: none !important;
-    }
-    
-    .header {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .checkbox-field {
-        display: flex !important;
-        flex-direction: row !important;
-        min-width: max-content !important;
-        justify-content: flex-start !important;
-        align-items: center !important;
-    }
-    
-    .hyväksyntä {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .lisätiedot-row {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-    }
-    
-    .lisätiedot-row>div,
-    .signatures>div,
-    .laite-rivi>.laite>div,
-    .asentaja>div {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-end !important;
-        margin-top: 0.4rem !important;
-    }
-    
-    #asentaja-btn {
-        border: solid 1px black !important;
-        width: min-content !important;
-        margin-top: 0.7rem !important;
-        display: none !important;
-    }
-    
-    .btn-row {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: flex-start !important;
-        display: none !important;
-    }
-    
-    .laitteen-tiedot {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .laite-rivi>.laite {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-    
-    .lisää-rivi-btn {
-        margin-top: 0.4rem !important;
-        width: min-content !important;
-        white-space: nowrap !important;
-        border: 1px solid black !important;
-        display: none !important;
-    }
-    
-    .lisää-rivi-btn:hover {
-        cursor: pointer !important;
-        background-color: whitesmoke !important;
-    }
-    
-    .checkboxes {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-    }
-    
-    .signatures {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-    
-    * {
-        transition: none !important;
-        row-gap: 0.2rem !important;
-        column-gap: 0.7rem !important;
-    
-        font-family: Arial, Helvetica, sans-serif !important;
-    }
-    
-    label {
-        font-size: smaller !important;
+        justify-self: center;
+        width: 100%;
+        margin: 0 7.5%;
+        text-align: start;
+        padding-top: var(--default-padding);
     }
 }
